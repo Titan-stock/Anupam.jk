@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/7c2afb0d00.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet"> 
+<link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://titan-stock.github.io/Hiianupam/">
+  
+</head>
+<body>
+  <nav>
+    <div class="left-bar">
+      <h1>X-<span>VTED</span></h1>
+    </div>
+    <div class="mid-bar">
+      <ul>
+        <li><a href="#"><i class="fa-solid fa-house"></i>About</a></li>
+        <li><a href="#"><i class="fa-solid fa-eject"></i>About</a></li>
+        <li><a href="#"><i class="fa-regular fa-comment"></i>Feedback</a></li>
+      </ul>
+    </div>
+    <div class="right-bar">
+      <form action="">
+        <input type="text" name="search" id="srrh" placeholder="search..">
+        <button type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+    </div>
+    <div class="menu-bar online">
+      <img src="pg1.jpg" alt="">
+    </div>
+  </nav>
+    
+    
+    
+  <div class="container">
+<!---        <div class="left-contain">
+        <div class="left-title">
+          <h4>Events</h4>
+          <a href="#">See all</a>
+        </div>
+        <div class="event">
+          <div class="calender">
+           <h1>18</h1>
+           <span>June</span>
+          </div>
+          <div class="cal-left">
+           <h4>Holiday</h4>
+           <p><i class="fa-solid fa-location-dot"></i>In math class</p>
+           <a href="#">More info</a>
+          </div>
+        </div>
+        <div class="event-img">
+          <h4>A short photo</h4>
+          <img src="ff.png" alt="wait">
+          <p>
+          This is a short photo here 
+          seee photo to deeply
+          </p>
+         <button type="submit">
+           <input type="submit" value="click here">
+         </button>
+          
+        </div>
+         
+      </div>
+      
+      
+      
+      <!---right--->
+      <!--
+      
+      
+      <div class="right-contain"></div> --->
+      <div class="cale">
+        <h2> <a href="https://titan-stock.github.io/Hiianupam/">ANUPAM </a><span>CALCULATOR</span> </h2>
+      </div>
+      <div class="cale-container">
+        <div class="display">
+          <input type="text" id="screen" placeholder="">
+        </div>
+        <div class="btns">
+              <div class="row">
+                <button  id="ce" onclick="backspc()">CE</button>
+                <button onclick="fact()">x!</button>
+                <button class="btn">(</button>
+                <button class="btn">)</button>
+                <button class="btn">%</button>
+                <button id="ac" onclick="screen.value=''">AC</button>
+              </div>
+              <div class="row">
+                <button onclick="sin()">sin</button>
+                <button onclick="pi()">π</button>
+                <button class="btn">7</button>
+                <button class="btn">8</button>
+                <button class="btn">9</button>
+                <button class="btn">/</button>
+               </div>
+                <div class="row">
+                  <button onclick="cos()">cos</button>
+                  <button onclick="log()">log</button>
+                  <button class="btn">4</button>
+                  <button class="btn">5</button>
+                  <button class="btn">6</button>
+                  <button class="btn">×</button>
+                </div>
+                <div class="row">
+                  <button onclick="tan()">tan</button>
+                  <button onclick="sqrt()">√</button>
+                  <button class="btn">1</button>
+                  <button class="btn">2</button>
+                  <button class="btn">3</button>
+                  <button class="btn">-</button>
+                </div>
+                <div class="row">
+                  <button onclick="e()">e</button>
+                  <button onclick="pow()">x <span style="position: relative; bottom: .4em; right: .1em;">y</span>
+                </button>
+                  <button class="btn">0</button>
+                  <button class="btn">.</button>
+                  <button id="eval" onclick="screen.value=eval(screen.value)">=</button>
+                  <button class="btn">+</button>
+                </div>
+     <!--                  <div class="row">
+                <div class="row">
+                  <button class="btn"></button>
+                  <button class="btn"></button>
+                  <button class="btn"></button>
+                  <button class="btn"></button>
+                  <button class="btn"></button>
+                  <button class="btn"></button>
+                </div>     
+          <div class="row">
+            <button class="btn"></button>
+            <button class="btn"></button>
+            <button class="btn"></button>
+            <button class="btn"></button>
+            <button class="btn"></button>
+            <button class="btn"></button>
+          </div>  -->
+        </div>
+      </div>
+      
+  </div>
+
+</body>
+<script>
+    var screen = document.querySelector('#screen');
+    var btn = document.querySelectorAll('.btn');
+
+    /*============ For getting the value of btn, Here we use for loop ============*/
+    for (item of btn) {
+        item.addEventListener('click', (e) => {
+            btntext = e.target.innerText;
+
+            if (btntext == '×') {
+                btntext = '*';
+            }
+
+            if (btntext == '÷') {
+                btntext = '/';
+            }
+            screen.value += btntext;
+        });
+    }
+
+    function sin() {
+        screen.value = Math.sin(screen.value);
+    }
+
+    function cos() {
+        screen.value = Math.cos(screen.value);
+    }
+
+    function tan() {
+        screen.value = Math.tan(screen.value);
+    }
+
+    function pow() {
+        screen.value = Math.pow(screen.value, 2);
+    }
+
+    function sqrt() {
+        screen.value = Math.sqrt(screen.value, 2);
+    }
+
+    function log() {
+        screen.value = Math.log(screen.value);
+    }
+
+    function pi() {
+        screen.value = 3.14159265359;
+    }
+
+    function e() {
+        screen.value = 2.71828182846;
+    }
+
+    function fact() {
+        var i, num, f;
+        f = 1
+        num = screen.value;
+        for (i = 1; i <= num; i++) {
+            f = f * i;
+        }
+
+        i = i - 1;
+
+        screen.value = f;
+    }
+
+    function backspc() {
+        screen.value = screen.value.substr(0, screen.value.length - 1);
+    }
+</script>
+
+</html>
